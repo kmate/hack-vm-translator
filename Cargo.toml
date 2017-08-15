@@ -1,0 +1,6 @@
+[package]
+name = "hack-vm-translator"
+version = "0.1.0"
+
+[dependencies]
+clap = "2.26"
