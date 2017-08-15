@@ -1,2 +1,2 @@
-# hack-vm-translator
+# hack-vm-translator [![Build Status](https://travis-ci.org/kmate/hack-vm-translator.svg?branch=master)](https://travis-ci.org/kmate/hack-vm-translator) [![Coverage Status](https://coveralls.io/repos/github/kmate/hack-vm-translator/badge.svg?branch=master)](https://coveralls.io/github/kmate/hack-vm-translator?branch=master)
 Virtual machine code translator for the HACK machine of the Nand2Tetris course on Coursera
