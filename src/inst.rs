@@ -1,7 +1,7 @@
 use std::fmt;
 use std::fmt::Display;
 
-#[derive(Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum Op {
     Add,
     Sub,
@@ -32,7 +32,7 @@ impl Display for Op {
 
 use self::Op::*;
 
-#[derive(Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum Segment {
     Argument,
     Local,
@@ -83,14 +83,14 @@ use self::Inst::*;
 impl<'a> Display for Inst<'a> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match *self {
-            Arith { ref op } => op.fmt(f),
-            Pop { ref segment, index } => write!(f, "pop {} {}", segment, index),
-            Push { ref segment, index } => write!(f, "push {} {}", segment, index),
-            DefLabel { ref label } => write!(f, "label {}", label),
-            Goto { ref label } => write!(f, "goto {}", label),
-            IfGoto { ref label } => write!(f, "if-goto {}", label),
-            DefFun { ref name, nvars } => write!(f, "function {} {}", name, nvars),
-            Call { ref name, nargs } => write!(f, "call {} {}", name, nargs),
+            Arith { op } => op.fmt(f),
+            Pop { segment, index } => write!(f, "pop {} {}", segment, index),
+            Push { segment, index } => write!(f, "push {} {}", segment, index),
+            DefLabel { label } => write!(f, "label {}", label),
+            Goto { label } => write!(f, "goto {}", label),
+            IfGoto { label } => write!(f, "if-goto {}", label),
+            DefFun { name, nvars } => write!(f, "function {} {}", name, nvars),
+            Call { name, nargs } => write!(f, "call {} {}", name, nargs),
             Return => write!(f, "return"),
         }
     }
