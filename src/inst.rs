@@ -61,9 +61,11 @@ impl Display for Segment {
 
 use self::Segment::*;
 
-pub type Label<'a> = &'a str;
+type Ident<'a> = &'a str;
 
-pub type FunName<'a> = &'a str;
+pub type Label<'a> = Ident<'a>;
+
+pub type FunName<'a> = Ident<'a>;
 
 #[derive(Debug, PartialEq)]
 pub enum Inst<'a> {

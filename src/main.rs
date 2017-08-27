@@ -2,8 +2,8 @@ extern crate clap;
 #[macro_use]
 extern crate nom;
 
-mod codegen;
 mod inst;
+mod parser;
 
 fn main() {
     println!("Hello, world!");
